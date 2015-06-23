@@ -19,7 +19,7 @@ WORKDIR /root
 # Install ONOS
 RUN mkdir onos && \
    wget http://downloads.onosproject.org/release/onos-1.2.0.tar.gz && \
-   tar -xgf onos-1.2.0.tar.gz -C onos --strip-components=1 && \
+   tar -xf onos-1.2.0.tar.gz -C onos --strip-components=1 && \
    rm -rf onos-1.2.0.tar.gz
 
 # Set the environment variables
