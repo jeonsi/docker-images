@@ -1,5 +1,5 @@
 # Base the image on Debian as it's pretty small
-# Version 0.2.0
+# Version 0.3.0
 FROM debian
 MAINTAINER Seung-il Jeon <si.j@navercorp.com>
 
@@ -18,9 +18,9 @@ WORKDIR /root
 
 # Install ONOS
 RUN mkdir onos && \
-   wget http://sdnhub.org/downloads/tutorials/onos/onos-1.1.0-rc2.ubuntu.tar.gz && \
-   tar -xf onos-1.1.0-rc2.ubuntu.tar.gz -C onos --strip-components=1 && \
-   rm -rf onos-1.1.0-rc2.ubuntu.tar.gz
+   wget http://downloads.onosproject.org/release/onos-1.2.0.tar.gz && \
+   tar -xf onos-1.2.0.tar.gz -C onos --strip-components=1 && \
+   rm -rf onos-1.2.0.tar.gz
 
 # Set the environment variables
 ENV HOME /root
