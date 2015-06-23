@@ -10,7 +10,7 @@ RUN echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-s
     echo "deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main" | tee -a /etc/apt/sources.list.d/webupd8team-java.list && \
     apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886 && \
     apt-get update && \
-    apt-get install -y oracle-java8-installer oracle-java8-set-default && \
+    apt-get install -y oracle-java8-installer oracle-java8-set-default curl && \
     apt-get clean && apt-get purge
 
 # Change to /root directory
@@ -27,7 +27,7 @@ ENV HOME /root
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 ENV ONOS_NIC 10.0.0.*
 ENV ONOS_ROOT /root/onos
-ENV KARAF_VERSION 3.0.2
+ENV KARAF_VERSION 3.0.3
 ENV KARAF_ROOT /root/onos/apache-karaf-3.0.3
 ENV KARAF_LOG /root/onos/apache-karaf-3.0.3/data/log/karaf.log
 ENV PATH $PATH:$KARAF_ROOT/bin
@@ -42,4 +42,4 @@ EXPOSE 6633 5701
 
 # Get ready to run command
 WORKDIR /root/onos
-CMD ["./bin/onos-service"]
+CMD ["./bin/onos-service server"]
