@@ -33,7 +33,7 @@ ENV KARAF_LOG /root/onos/apache-karaf-3.0.3/data/log/karaf.log
 ENV PATH $PATH:$KARAF_ROOT/bin
 
 # Update the hazelcast xml
-RUN sed -i "s/172.17.\*.\*/$ONOS_NIC/g" ${ONOS_ROOT}/apache-karaf-3.0.3/etc/hazelcast.xml
+# RUN sed -i "s/172.17.\*.\*/$ONOS_NIC/g" ${ONOS_ROOT}/apache-karaf-3.0.3/etc/hazelcast.xml
 
 # Ports
 # 6633 - OpenFlow
