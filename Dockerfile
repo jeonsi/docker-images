@@ -18,9 +18,9 @@ WORKDIR /root
 
 # Install ONOS
 RUN mkdir onos && \
-   wget http://downloads.onosproject.org/release/onos-1.2.0.tar.gz && \
-   tar -xf onos-1.2.0.tar.gz -C onos --strip-components=1 && \
-   rm -rf onos-1.2.0.tar.gz
+   wget http://downloads.onosproject.org/nightly/onos-1.2.0.latest-NIGHTLY.tar.gz && \
+   tar -xf onos-1.2.0.latest-NIGHTLY.tar.gz -C onos --strip-components=1 && \
+   rm -rf onos-1.2.0.latest-NIGHTLY.tar.gz
 
 # Set the environment variables
 ENV HOME /root
@@ -42,4 +42,4 @@ EXPOSE 6633 5701
 
 # Get ready to run command
 WORKDIR /root/onos
-CMD ["./bin/onos-service server"]
+CMD ["./bin/onos-service"]
